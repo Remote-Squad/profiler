@@ -1,0 +1,249 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="9">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="div" />
+            <item index="7" class="java.lang.String" itemvalue="marquee" />
+            <item index="8" class="java.lang.String" itemvalue="a" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="32">
+            <item index="0" class="java.lang.String" itemvalue="protobuf" />
+            <item index="1" class="java.lang.String" itemvalue="PyJWT" />
+            <item index="2" class="java.lang.String" itemvalue="firebase-admin" />
+            <item index="3" class="java.lang.String" itemvalue="async-timeout" />
+            <item index="4" class="java.lang.String" itemvalue="googleapis-common-protos" />
+            <item index="5" class="java.lang.String" itemvalue="google-cloud-storage" />
+            <item index="6" class="java.lang.String" itemvalue="frozenlist" />
+            <item index="7" class="java.lang.String" itemvalue="google-resumable-media" />
+            <item index="8" class="java.lang.String" itemvalue="certifi" />
+            <item index="9" class="java.lang.String" itemvalue="google-auth-httplib2" />
+            <item index="10" class="java.lang.String" itemvalue="grpcio-status" />
+            <item index="11" class="java.lang.String" itemvalue="urllib3" />
+            <item index="12" class="java.lang.String" itemvalue="pyparsing" />
+            <item index="13" class="java.lang.String" itemvalue="google-api-core" />
+            <item index="14" class="java.lang.String" itemvalue="asgiref" />
+            <item index="15" class="java.lang.String" itemvalue="cryptography" />
+            <item index="16" class="java.lang.String" itemvalue="reportlab" />
+            <item index="17" class="java.lang.String" itemvalue="tqdm" />
+            <item index="18" class="java.lang.String" itemvalue="openai" />
+            <item index="19" class="java.lang.String" itemvalue="Django" />
+            <item index="20" class="java.lang.String" itemvalue="proto-plus" />
+            <item index="21" class="java.lang.String" itemvalue="cachetools" />
+            <item index="22" class="java.lang.String" itemvalue="charset-normalizer" />
+            <item index="23" class="java.lang.String" itemvalue="aiohttp" />
+            <item index="24" class="java.lang.String" itemvalue="google-api-python-client" />
+            <item index="25" class="java.lang.String" itemvalue="grpcio" />
+            <item index="26" class="java.lang.String" itemvalue="CacheControl" />
+            <item index="27" class="java.lang.String" itemvalue="google-cloud-core" />
+            <item index="28" class="java.lang.String" itemvalue="google-auth" />
+            <item index="29" class="java.lang.String" itemvalue="Pillow" />
+            <item index="30" class="java.lang.String" itemvalue="django-allauth" />
+            <item index="31" class="java.lang.String" itemvalue="google" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+          <option value="E303" />
+          <option value="E731" />
+          <option value="E112" />
+          <option value="E125" />
+          <option value="E722" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N801" />
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="core.models.Tone.id" />
+          <option value="django.db.models.fields.related.ForeignKey.id" />
+          <option value="django.contrib.auth.models.User.DoesNotExist" />
+          <option value="core.models.Project.objects" />
+          <option value="core.models.Thread.objects" />
+          <option value="core.models.Post.objects" />
+          <option value="core.models.Staff.objects" />
+          <option value="kobi.models.Message.objects" />
+          <option value="kobi.models.Response.objects" />
+          <option value="accounts.models.UserProfile.DoesNotExist" />
+          <option value="accounts.models.UserProfile.objects" />
+          <option value="django.db.models.fields.related.OneToOneField.username" />
+          <option value="django.db.models.fields.DateTimeField.strftime" />
+          <option value="core.models.Document.objects" />
+          <option value="accounts.models.UserTokenCounter.objects" />
+          <option value="accounts.models.BillingSubscription.objects" />
+          <option value="generators.social_post_generator.request" />
+          <option value="core.models.Service.objects" />
+          <option value="django.db.models.fields.related.ManyToManyField.all" />
+          <option value="cord.models.Song.objects" />
+          <option value="reactions.models.Alert.objects" />
+          <option value="reactions.models.Download.objects" />
+          <option value="cord.models.Link.objects" />
+          <option value="cord.models.Artist.objects" />
+          <option value="reactions.models.Stream.objects" />
+          <option value="cord.models.Song.id" />
+          <option value="core.models.Gallery.objects" />
+          <option value="core.models.Testimonial.objects" />
+          <option value="core.models.ServiceCollection.objects" />
+          <option value="allauth.app_settings.LOGIN_ATTEMPTS_LIMIT" />
+          <option value="core.models.ServiceCollection.DoesNotExist" />
+          <option value="super.save" />
+          <option value="core.models.DocumentType.objects" />
+          <option value="core.models.DocumentClass.objects" />
+          <option value="object.writes" />
+          <option value="accounts.models.BillingSubscription.DoesNotExist" />
+          <option value="accounts.models.UserTokenCounter.DoesNotExist" />
+          <option value="core.models.Cluster.objects" />
+          <option value="core.models.Tool.objects" />
+          <option value="database.models.Cluster.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.username" />
+          <option value="database.models.Showcase.objects" />
+          <option value="database.models.Storage.objects" />
+          <option value="database.models.Document.objects" />
+          <option value="database.models.Storage.DoesNotExist" />
+          <option value="managers.accounts.models.BillingSubscription.DoesNotExist" />
+          <option value="managers.accounts.models.BillingSubscription.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.generation_class" />
+          <option value="core.models.GeneratorSession.objects" />
+          <option value="core.models.Prompt.objects" />
+          <option value="cord.models.Artist.id" />
+          <option value="core.models.PromptsMarketPlace.objects" />
+          <option value="managers.payments.models.Package.objects" />
+          <option value="database.models.Tool.objects" />
+          <option value="cord.models.Link.DoesNotExist" />
+          <option value="str.date_modified" />
+          <option value="cord.models.Artist.DoesNotExist" />
+          <option value="cord.models.SongContributor.objects" />
+          <option value="core.models.Interest.objects" />
+          <option value="django.contrib.auth.models.User.MultipleObjectsReturned" />
+          <option value="core.models.Prompt.DoesNotExist" />
+          <option value="object.prompt" />
+          <option value="core.models.Interest.DoesNotExist" />
+          <option value="django.db.models.fields.json.JSONField.__getitem__" />
+          <option value="apps.promptgenerator.models.Result.id" />
+          <option value="django.db.models.fields.related.ForeignKey.data" />
+          <option value="apps.promptgenerator.models.PromptData.DoesNotExist" />
+          <option value="apps.promptgenerator.models.PromptData.objects" />
+          <option value="lyric_api.core.models.Lyric.objects" />
+          <option value="lyric_api.core.models.User.DoesNotExist" />
+          <option value="object.generate" />
+          <option value="object.refined_output" />
+          <option value="object.id" />
+          <option value="object.data" />
+          <option value="apps.promptgenerator.views.PromptRefiningEndpoint" />
+          <option value="object.save" />
+          <option value="apps.promptgenerator.models.PromptResult.objects" />
+          <option value="allauth.socialaccount.models.SocialAccount.objects" />
+          <option value="allauth.socialaccount.models.SocialAccount.DoesNotExist" />
+          <option value="managers.project.models.Project.objects" />
+          <option value="managers.project.models.ProjectCollaborator.objects" />
+          <option value="managers.project.models.ProjectContent.objects" />
+          <option value="managers.project.models.ProjectCollaborator.DoesNotExist" />
+          <option value="utilities.parsers.Parser.*" />
+          <option value="database.models.Notification.objects" />
+          <option value="database.models.DocumentStorage.objects" />
+          <option value="apps.promptgenerator.models.PromptResult.id" />
+          <option value="promptgenerator.models.PromptResult.objects" />
+          <option value="database.models.DocumentCollaboration.objects" />
+          <option value="promptgenerator.models.PromptData.objects" />
+          <option value="core.models.Question.objects" />
+          <option value="project.models.ProjectCollaborator.objects" />
+          <option value="cord.models.Link.MultipleObjectsReturned" />
+          <option value="django.db.models.fields.related.ForeignKey.document_id" />
+          <option value="django.db.models.fields.related.ForeignKey.user_id" />
+          <option value="str.username" />
+          <option value="str.pk" />
+          <option value="core.models.AppInterests.objects" />
+          <option value="backend.app.models.Tool.objects" />
+          <option value="core.models.AppInterests.DoesNotExist" />
+          <option value="backend.authentication.forms.UserLoginForm.error_messages" />
+          <option value="core.models.DiscoverySurvey.objects" />
+          <option value="main.models.Tool.objects" />
+          <option value="billing.models.BillingSubscription.objects" />
+          <option value="billing.models.BillingSubscription.DoesNotExist" />
+          <option value="authentication.models.Promotion.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.first_name" />
+          <option value="django.db.models.fields.related.ForeignKey.last_name" />
+          <option value="accounts.models.Profile.objects" />
+          <option value="random.random.choices" />
+          <option value="promptgenerator.models.PromptData.DoesNotExist" />
+          <option value="main.models.Document.objects" />
+          <option value="main.models.Session.objects" />
+          <option value="main.models.Document.DoesNotExist" />
+          <option value="core.models.Voter.objects" />
+          <option value="core.models.Voter.DoesNotExist" />
+          <option value="core.models.AuthHash.objects" />
+          <option value="core.models.Aspirant.objects" />
+          <option value="core.models.Vote.objects" />
+          <option value="core.models.Vote.DoesNotExist" />
+          <option value="django.db.models.fields.related.ForeignKey.reg_number" />
+          <option value="core.models.VotingTime.objects" />
+          <option value="core.models.AuthHash.DoesNotExist" />
+          <option value="django.db.models.fields.related.ForeignKey.student_number" />
+          <option value="PyPDF2._writer.PdfWriter.set_font" />
+          <option value="PyPDF2._writer.PdfWriter.set_text_color" />
+          <option value="PyPDF2._writer.PdfWriter.text" />
+          <option value="core.models.FailedAttempt.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.student_name" />
+          <option value="django.forms._bound_items.items" />
+          <option value="core.models.Email.objects" />
+          <option value="core.models.EmailStat.objects" />
+          <option value="vote.models.Voter.objects" />
+          <option value="vote.models.Voter.DoesNotExist" />
+          <option value="control.models.Controller.DoesNotExist" />
+          <option value="control.models.Controller.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.election" />
+          <option value="vote.models.Election.objects" />
+          <option value="vote.models.Post.objects" />
+          <option value="vote.models.Contestant.objects" />
+          <option value="vote.models.PostVote.objects" />
+          <option value="vote.models.Contestant.DoesNotExist" />
+          <option value="landing.models.Blog.objects" />
+          <option value="billing.models.Package.objects" />
+          <option value="project.models.Project.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.user" />
+          <option value="vote.models.EmailStat.objects" />
+          <option value="landing.models.FAQ.objects" />
+          <option value="django.db.models.fields.related.OneToOneField.email" />
+          <option value="rest_framework.authtoken.models.Token.objects" />
+          <option value="main.urls.urlpatterns" />
+          <option value="authentication.models.DiscoverySurvey.objects" />
+          <option value="vote.models.ElectionVoter.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.exclude" />
+          <option value="django.db.models.fields.related.ForeignKey.starting_time" />
+          <option value="django.db.models.fields.related.ForeignKey.closing_time" />
+          <option value="vote.models.Election.DoesNotExist" />
+          <option value="vote.models.ElectionVoter.DoesNotExist" />
+          <option value="control.models.ElectionController.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
