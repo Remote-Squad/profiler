@@ -1,7 +1,7 @@
 
 from django.urls import path
-from .views import LearningTypeAPIView
+from .views import ResearchAPIView
 
 urlpatterns = [
-    path('learning-type/', LearningTypeAPIView.as_view(), name='learning-type'),
+    path('research/', ResearchAPIView.as_view(), name='learning-type'),
 ]

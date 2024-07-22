@@ -1,29 +1,25 @@
-# learning_types/views.py
-
-from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Question, Answer
-from .serializers import QuestionSerializer, AnswerSerializer
+
+from .agents.v1 import make_research
+from .models import Research
+from .serializers import ResearchSerializer
 
 
-class LearningTypeAPIView(APIView):
-    serializer_class = AnswerSerializer
+class ResearchAPIView(APIView):
+    serializer_class = ResearchSerializer
 
-    def get(self, request, format=None):
-        questions = Question.objects.all()
-        serializer = QuestionSerializer(questions, many=True)
+    def get(self, request):
+        query = request.GET.get('q') if request.GET.get('q') else request.GET.get("query")
+
+        if Research.objects.filter(query=query).exists():
+            data = Research.objects.get(query=query)
+
+            serializer = self.serializer_class(instance=data)
+
+            return Response(serializer.data)
+
+        data = make_research(query=query)
+        research = Research.objects.create(query=query, data=data)
+        serializer = self.serializer_class(instance=research)
         return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        answers_data = serializer.validated_data.get('answers')
-
-        print(answers_data)
-
-        # Assuming classify_learning_type function is implemented to return learning types
-        # You can integrate your classification logic here
-        classified_types, _ = classify_learning_type(answers_data)
-
-        return Response({'classified_types': classified_types}, status=status.HTTP_200_OK)

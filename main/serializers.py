@@ -1,16 +1,8 @@
 from rest_framework import serializers
-from .models import Question, Answer
+from .models import Research
 
 
-class AnswerSerializer(serializers.ModelSerializer):
+class ResearchSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Answer
-        fields = ('id', 'answer_text')
-
-
-class QuestionSerializer(serializers.ModelSerializer):
-    answers = AnswerSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = Question
-        fields = ('id', 'question_text', 'answers')
+        model = Research
+        fields = ('id', 'query', 'data', 'date_added', 'date_modified')
