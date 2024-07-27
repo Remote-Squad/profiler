@@ -12,6 +12,9 @@ class ResearchAPIView(APIView):
     def get(self, request):
         query = request.GET.get('q') if request.GET.get('q') else request.GET.get("query")
 
+        if not query:
+            return Response({"error": "Missing query parameter"})
+
         if Research.objects.filter(query=query).exists():
             data = Research.objects.get(query=query)
 
