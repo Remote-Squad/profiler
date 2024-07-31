@@ -136,3 +136,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ],
 }
+
+try:
+    from .development_settings import *
+except ModuleNotFoundError as e:
+    pass

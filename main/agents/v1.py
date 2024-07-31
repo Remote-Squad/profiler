@@ -1,8 +1,9 @@
+import os
+
 import openai
 import requests
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv, dotenv_values
-import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -15,22 +16,27 @@ def make_research(query):
 
     soup = BeautifulSoup(data.text, 'html.parser')
 
-    raw_data = soup.body.find(attrs={"id": "main"}).get_text().strip()
+    text_data = soup.body.find(attrs={"id": "main"}).get_text().strip()
+
+    x, y = text_data.find("Verbatim") + 8, text_data.find("Next >")
+
+    text_data = text_data[x:y]
 
     messages = [
         {
-            "role": "system",
-            "content": "Prepare for me a well formatted document [should not have markdown in the data] as a research an a potential lead i will be having meeting with this should as complete as possible use the google search content provide below to get all information about the client include any link and profile of the person and connections of the client with other entities, job history, location and many more in preparation of our meeting"
-        },
-        {
-            "role": "assistant",
-            "content": "Please provide me the google search data of the client"
-        },
-        {
             "role": "user",
-            "content": f"```{raw_data}```"
-        }
+            "content": f"""
+Carry out a comprehensive background search on the query {query}, i have included below copied text from the google search result for the query. include only information which is directly related to the query and try as much not to miss any facts the desired output is described below.
+
+desired output must include Key roles and duration at Remote Squad, Major contributions and technical skills, Public Recognition and Activities, Highlights from online platforms, Personal Background, professional background and areas of specialization and any other important data based on copied text
+
+google search data:
+```{text_data}```
+"""
+        },
     ]
+
+
     response = Client.chat.completions.create(model="gpt-3.5-turbo", messages=messages, temperature=.5)
 
     return response.choices[0].message.content
