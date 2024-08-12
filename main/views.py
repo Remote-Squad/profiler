@@ -6,6 +6,14 @@ from .models import Research
 from .serializers import ResearchSerializer
 
 
+class SocialResearchAPIView(APIView):
+    def get(self, request):
+        query = request.GET.get('q') if request.GET.get('q') else request.GET.get("query")
+        query = request.GET.get('q') if request.GET.get('q') else request.GET.get("query")
+
+        # this does nothing
+        return Response(self)
+
 class ResearchAPIView(APIView):
     serializer_class = ResearchSerializer
 
