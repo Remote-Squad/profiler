@@ -133,13 +133,11 @@ def parse_html_blocks(html_content) -> list[dict]:
     return parsed_results
 
 
-def make_research(query: str) -> str:
+def research(query: str) -> str:
     url = "https://www.google.com/search?query=" + quote(query)
 
     with urlopen(url) as response:
         parsed_data = parse_html_blocks(response.read())
-
-        print(parsed_data)
 
         summary = summarize(parsed_data, query)
 
