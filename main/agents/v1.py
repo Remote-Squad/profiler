@@ -43,6 +43,7 @@ def summarize(data: list[dict], query) -> str:
 
 1. Data source: Google search results for the query "{query}"
 2. Content: Include only factual information directly relevant to the query
+4. Links: all links given have to be in the data given under the ['url'] key i.e no ai formulating non existing links
 3. Format:
    - Use markdown for structure
    - Employ headers (H2, H3) to organize main topics and subtopics
