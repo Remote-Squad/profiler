@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import os
 # Import the update_expense function from the appropriate module
-from .expense import update_expense
+from api.expense import update_expense
 
 @csrf_exempt
 def update_expense_view(request):
