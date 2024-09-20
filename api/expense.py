@@ -8,6 +8,18 @@ from dotenv import load_dotenv
 import os
 import json
 
+import logging 
+# Set up the basic configuration for logging
+logging.basicConfig(
+    filename='/home/mainfilm/logs/my_log_file.log',  # PythonAnywhere path to logs
+    level=logging.ERROR,  # Log errors and above (i.e., warnings, critical errors)
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# Log an error message
+logging.error('An error occurred in the application!')
+
+
 # Get the absolute path of the current directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -42,6 +54,7 @@ def download_gdrive_file_to_base64(gdrive_id):
         return base64.b64encode(file_content.read()).decode('utf-8')
     except Exception as e:
         print(f"Failed to download and encode file: {str(e)}")
+
         return None
 
 def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_domain):
@@ -62,6 +75,7 @@ def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_doma
     pdf_base64 = pdf_drive_id
     if not pdf_base64:
         print("Failed to download and encode the PDF file.")
+
         return None
 
     new_expense_data = {
@@ -109,3 +123,4 @@ if __name__ == '__main__':
         print(json.dumps(result, indent=2))
     else:
         print("Failed to update expense.")
+
