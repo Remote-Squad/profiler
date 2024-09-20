@@ -59,7 +59,7 @@ def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_doma
         print(f"Failed to fetch current expense: {str(e)}")
         return None
 
-    pdf_base64 = download_gdrive_file_to_base64(pdf_drive_id)
+    pdf_base64 = pdf_drive_id
     if not pdf_base64:
         print("Failed to download and encode the PDF file.")
         return None
