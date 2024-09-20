@@ -7,6 +7,7 @@ from googleapiclient.http import MediaIoBaseDownload
 from dotenv import load_dotenv
 import os
 import json
+
 import logging 
 # Set up the basic configuration for logging
 logging.basicConfig(
@@ -17,6 +18,7 @@ logging.basicConfig(
 
 # Log an error message
 logging.error('An error occurred in the application!')
+
 
 # Get the absolute path of the current directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -52,7 +54,7 @@ def download_gdrive_file_to_base64(gdrive_id):
         return base64.b64encode(file_content.read()).decode('utf-8')
     except Exception as e:
         print(f"Failed to download and encode file: {str(e)}")
-        logging.error(f"Failed to download and encode file: {str(e)}")
+
         return None
 
 def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_domain):
@@ -68,13 +70,12 @@ def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_doma
         current_expense = response.json()
     except requests.RequestException as e:
         print(f"Failed to fetch current expense: {str(e)}")
-        logging.error(f"Failed to fetch current expense: {str(e)}")
         return None
 
-    pdf_base64 = download_gdrive_file_to_base64(pdf_drive_id)
+    pdf_base64 = pdf_drive_id
     if not pdf_base64:
         print("Failed to download and encode the PDF file.")
-        logging.error("Failed to download and encode the PDF file.")
+
         return None
 
     new_expense_data = {
@@ -101,7 +102,6 @@ def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_doma
         new_expense = response.json()
     except requests.RequestException as e:
         print(f"Failed to create new expense: {str(e)}")
-        logging.error(f"Failed to create new expense: {str(e)}")
         return None
 
     try:
@@ -109,7 +109,6 @@ def update_expense(project_id, expense_id, pdf_drive_id, moco_api_key, moco_doma
         response.raise_for_status()
     except requests.RequestException as e:
         print(f"Failed to delete old expense: {str(e)}")
-        logging.error(f"Failed to delete old expense: {str(e)}")
         return None
 
     return new_expense
@@ -124,3 +123,4 @@ if __name__ == '__main__':
         print(json.dumps(result, indent=2))
     else:
         print("Failed to update expense.")
+
