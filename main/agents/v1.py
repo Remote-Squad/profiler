@@ -1,3 +1,4 @@
+from typing import List
 from urllib.parse import quote, urlparse, parse_qs
 from urllib.request import urlopen
 
@@ -35,7 +36,6 @@ def summarize(data: list[dict], query) -> str:
         del i['displayed_url']
         obj.append(i)
 
-
     messages = [
         {
             "role": "system",
@@ -56,7 +56,7 @@ def summarize(data: list[dict], query) -> str:
    - Main body (3-5 key topics, each with 2-3 supporting points)
    - Conclusion (1-2 sentences summarizing key takeaways)
 
-Output the summary content only, without additional commentary or metadata."""
+Output the summary content only, without additional commentary or metadata. only the summary content"""
         },
         {
             "role": "assistant",
@@ -68,8 +68,7 @@ Output the summary content only, without additional commentary or metadata."""
         }
     ]
 
-
-    response = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages, temperature=.2)
+    response = client.chat.completions.create(model="gpt-4o-mini", messages=messages, temperature=.2)
 
     return response.choices[0].message.content
 
@@ -77,17 +76,13 @@ Output the summary content only, without additional commentary or metadata."""
 def parse_html_blocks(html_content) -> list[dict]:
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Find all top-level div elements that contain the result blocks
     result_blocks = soup.find_all('div')
-
-    # print(result_blocks)
 
     parsed_results = []
 
     for block in result_blocks:
         result = {}
 
-        # Extract the title and URL
         a_tag = block.find('a')
         if a_tag:
             title_div = a_tag.find('div', recursive=False)
@@ -108,7 +103,6 @@ def parse_html_blocks(html_content) -> list[dict]:
 
         result['description'] = desc_div.get_text(strip=True)
 
-        # Extract the displayed URL
         display_url_div = block.find('div', class_=lambda x: x and 'BNeawe' in x and 'UPmit' in x)
         if display_url_div:
             result['displayed_url'] = display_url_div.get_text(strip=True)
@@ -134,15 +128,17 @@ def parse_html_blocks(html_content) -> list[dict]:
     return parsed_results
 
 
-def make_research(query: str) -> str:
+def make_research(query: str) -> list:
     url = "https://www.google.com/search?query=" + quote(query)
 
     with urlopen(url) as response:
         parsed_data = parse_html_blocks(response.read())
 
-        print(parsed_data)
+        return parsed_data
 
-        summary = summarize(parsed_data, query)
-
-        return markdown_to_string(summary)
+        # # print(parsed_data)
+        # #
+        # # summary = summarize(parsed_data, query)
+        #
+        # return markdown_to_string(summary)
 
