@@ -147,8 +147,8 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 6444577
 # except ModuleNotFoundError as e:
 #     pass
 
-{
-    "project_id": "947039913",
-    "expense_id": "3155892",
-    "pdf_drive_id": "1IBFRsaRSCxNhcQGddyeZYAEkEyLi-SCV"
-}
+# {
+#     "project_id": "947039913",
+#     "expense_id": "3155892",
+#     "pdf_drive_id": "1IBFRsaRSCxNhcQGddyeZYAEkEyLi-SCV"
+# }
