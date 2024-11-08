@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r7o%%!lke(k!$!xfl%n#ow3j_cvj!-esi%-5dl-qxuig@$ci8q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -152,3 +152,4 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 6444577
 #     "expense_id": "3155892",
 #     "pdf_drive_id": "1IBFRsaRSCxNhcQGddyeZYAEkEyLi-SCV"
 # }
+

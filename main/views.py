@@ -31,6 +31,12 @@ class ResearchAPIView(APIView):
             return Response(serializer.data)
 
         data = make_research(query=query)
-        research = Research.objects.create(query=query, data=data)
+        research = Research.objects.create(query=query, data=data.__str__())
         serializer = self.serializer_class(instance=research)
-        return Response(serializer.data)
+
+        api_response = serializer.data
+
+
+        api_response["search_result"] = data
+
+        return Response(api_response)
